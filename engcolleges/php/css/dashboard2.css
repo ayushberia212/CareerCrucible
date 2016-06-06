@@ -1,0 +1,44 @@
+
+
+.minicard article {
+    padding: 1rem .75rem 0 7rem;
+    line-height: 1.25;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+.minicard figure .listText {
+    position: absolute;
+    top: -2%;
+    left: 5%;
+}
+
+.minicard:hover {
+    background: #e6e6e6;
+}
+
+.minicard {
+    display: block;
+    margin:10px 20px;
+    height: 80px;
+    width: 30%;
+}
+
+.minicard figure .listText h3, .minicard figure .listText span {
+    color: #00a6de;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.minicard article p {
+    color: #000;
+    margin-top:5%;
+}
+.minicard:nth-of-type(odd) {
+    clear: left;
+}
+.minicard:nth-of-type(even) {
+    clear: right;
+}
