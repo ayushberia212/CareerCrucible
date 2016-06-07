@@ -1,0 +1,2 @@
+[30-May-2016 23:31:50] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home6/knowener/public_html/cctest/counselling/slots/php/book_slot.php:26) in /home6/knowener/public_html/cctest/counselling/slots/php/book_slot.php on line 38
+[30-May-2016 23:33:23] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home6/knowener/public_html/cctest/counselling/slots/php/book_slot.php:26) in /home6/knowener/public_html/cctest/counselling/slots/php/book_slot.php on line 38
