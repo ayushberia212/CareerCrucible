@@ -1,5 +1,5 @@
 <?php
-include "..\db_connect.php";
+include "..user_iddb_connect.php";
 
 $find="SELECT COUNT(`id`) FROM `branch_info`";
 $find="SELECT * FROM `branch_info`";
@@ -49,7 +49,7 @@ border: 1px solid green ;
 </script>
      <!-- navbar-->
      <?php
-     include'..\header.php'
+     include'..user_idheader.php'
      ?>
 
 
@@ -142,7 +142,7 @@ echo "</div>";
 </div>
 </div>
  <?php
-          include '..\footer.php'
+          include '..user_idfooter.php'
           ?>
 
     <!-- Javascript files-->
