@@ -1,5 +1,5 @@
 <?php
-include "..\..\db_connect.php";
+include "..user_id..user_iddb_connect.php";
 $id=$_GET["id"];
 $search = "SELECT * FROM `college_info` WHERE clg_id=$id";
 $rs=mysqli_query($db,$search);
@@ -19,7 +19,7 @@ $row=mysqli_fetch_assoc($rs);
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css\dashboard2.css" rel="stylesheet">
+    <link href="cssuser_iddashboard2.css" rel="stylesheet">
 
     <!-- Google fonts - Roboto Condensed for headings, Open Sans for copy-->
     <link rel="stylesheet" href="css/font-min.css">
@@ -69,7 +69,7 @@ function diffImage(img)
 
 <?php
 
-include '..\..\header.php';
+include '..user_id..user_idheader.php';
 
 ?>
 
@@ -213,11 +213,11 @@ include '..\..\header.php';
         <div class="col-md-3 noscreen " >
           
           <?php
-          include '..\..\fblike.php'
+          include '..user_id..user_idfblike.php'
           ?>
 
           <?php
-          include'..\..\populartags.php'
+          include'..user_id..user_idpopulartags.php'
           ?>
 
                  </div>
@@ -428,7 +428,7 @@ include '..\..\header.php';
                     $message = wordwrap($message, 70);
                     $mail->Subject=$subject;
                     $mail->Body=$message;
-                    //$headers = 'From:noreply@localhost'."\r\n"; // Set from headers        
+                    //$headers = 'From:noreply@localhost'."user_idruser_idn"; // Set from headers        
                     if(!$mail->send()) {
                         echo 'Message could not be sent.';
                         echo 'Mailer Error: ' . $mail->ErrorInfo;
@@ -813,7 +813,7 @@ college
 </div>-->
 <?php
 
-    //include '..\..\foot.php';
+    //include '..user_id..user_idfoot.php';
 
 ?>
 
@@ -831,7 +831,7 @@ college
 
 <?php
 
-    include '..\..\footer.php';
+    include '..user_id..user_idfooter.php';
 
 ?>
 
@@ -844,7 +844,7 @@ college
  <!-- Javascript files-->
  
     <script src="js/jquery-1.11.0.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><user_id/script>')</script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 

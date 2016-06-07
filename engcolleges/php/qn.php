@@ -1,5 +1,5 @@
 <?php
-include "..\..\db_connect.php"; 
+include "../../db_connect.php"; 
 //$con=connect();
 /*if(!isset($_SESSION['consultant_id'])){
   echo "<script>window.open('../','_self')</script>";
@@ -18,16 +18,16 @@ include "..\..\db_connect.php";
     <link rel="icon" href="../../favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
-    <link href="css\dashboard2.css" rel="stylesheet">
-    <!--link href="..\css\questions.css" rel="stylesheet"-->
+    <link href="css/dashboard2.css" rel="stylesheet">
+    <!--link href="../css/questions.css" rel="stylesheet"-->
     <!-- Bootstrap core CSS -->
-    <link href="css\bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css\ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js\ie-emulation-modes-warning.js"></script>
+    <script src="js/ie-emulation-modes-warning.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/themify-icons.css">
 <link rel="stylesheet" href="css/font-min.css">
@@ -54,7 +54,7 @@ include "..\..\db_connect.php";
 
 <?php
 
-include '..\..\header.php';
+include '../../header.php';
 
 ?>
 <div class="container">
@@ -307,17 +307,17 @@ include '..\..\header.php';
 
 <?php
 
-    include '..\..\footer.php';
+    include '../../footer.php';
 ?>
 
       <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-   <script src="js\jquery.min.js"></script>
+   <script src="js/jquery.min.js"></script>
     <!--script>window.jQuery || document.write('<script src="jquery-1.11.3.min.js"></script>'</script-->
-    <script src="js\bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js\holder.min.js"></script>
+    <script src="js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js\ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>

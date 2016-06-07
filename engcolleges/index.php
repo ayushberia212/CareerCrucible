@@ -1,5 +1,5 @@
 <?php
-include "..\db_connect.php";
+include "..user_iddb_connect.php";
 $find="SELECT COUNT(clg_id) FROM college_info";
 $row=mysqli_fetch_array(mysqli_query($db,$find));
 $size=$row[0];
@@ -53,7 +53,7 @@ $rs=mysqli_query($db,$find);
 </script>
      <!-- navbar-->
      <?php
-     include'..\header.php'
+     include'..user_idheader.php'
      ?>
 
 
@@ -201,7 +201,7 @@ for($i=0;$i<$total_page+10;$i++)
 </center>
  <?php
  }
-          include '..\footer.php'
+          include '..user_idfooter.php'
           ?>
 
     <!-- Javascript files-->
