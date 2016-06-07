@@ -280,20 +280,20 @@ include '..\..\header.php';
               </div>
               <div class="modal-body">
                   <?php
-                    if(!isset($_SESSION['consultant_id']))
+                  if(!isset($_SESSION['user_id']))
+                  {
+                    echo "You must be logged in as a Senior to Add an Answer.";
+                    echo "<br><br><a href='../../slots/senior' class='btn btn-primary'>Login as Senior</a>";
+                  }
+                    else if(isset($_SESSION['user_id']))
                     {
-                          echo "You must be logged in as a Senior to Add an Answer.";
-                          if(isset($_SESSION['student_id']))
+                          if($_SESSION['role']='junior')
                           {
-                            echo "<br><br><a href='' class='btn btn-primary'>Log out as Junior</a>";
+                            echo "You must be logged in as a Senior to Add an Answer.";
+                            echo "<br><br><a href='../../slots/junior/php/logout.php' class='btn btn-primary'>Log out as Junior</a>";
                           }
                           else
-                          {
-                             echo "<br><br><a href='' class='btn btn-primary'>Login as Senior</a>";
-                          }
-                    }
-                    else
-                    {
+                          {       
                   ?>
                   <form class="form-horizontal" name="answerform" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
                   <fieldset>
@@ -337,6 +337,7 @@ include '..\..\header.php';
                 </form>
                 <?php
                   }
+                }
                 ?>
               </div>
               <div class="modal-footer">
