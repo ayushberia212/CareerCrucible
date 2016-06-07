@@ -46,6 +46,8 @@ else{
 		<link rel="stylesheet" href="css/style.student_view.css">
 		<link rel="stylesheet" type="text/css" href="css/style.consultant_prof.css">
 		<link rel="stylesheet" href="../slots/css/style.login.css">
+		
+        <link rel="stylesheet" href="css/mandatoryTheme.css">
 		<!-- <link rel="stylesheet" href="css/style.student_view.css"> -->
 		<!-- Google fonts - Roboto Condensed for headings, Open Sans for copy-->
 		<link rel="stylesheet" href="css/font-min.css">

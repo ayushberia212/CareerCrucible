@@ -45,6 +45,9 @@ else{
 		<link rel="stylesheet" href="css/font-min.css">
 		<link rel="stylesheet" href="css/style.student_view.css">
 		<link rel="stylesheet" type="text/css" href="css/style.booked_slot.css">
+		<link rel="stylesheet" href="css/mandatoryTheme.css">
+		<!-- theme stylesheet-->
+		<link rel="stylesheet" href="css/style.login.css">
 		<script src="js/jquery.min.js"></script>
 		<!-- Custom Fonts
 		<link rel="stylesheet" href="css/style.login.css" -->

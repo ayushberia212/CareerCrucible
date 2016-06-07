@@ -26,12 +26,12 @@
     <!-- Google fonts - Roboto Condensed for headings, Open Sans for copy-->
     <link rel="stylesheet" href="css/font-min.css">
 
+        <link rel="stylesheet" href="css/mandatoryTheme.css">
+        <!-- theme stylesheet-->
+        <link rel="stylesheet" href="css/style.login.css">
     <script src="js/jquery.min.js"></script>
     
         <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
 
