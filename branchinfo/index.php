@@ -1,8 +1,16 @@
 <?php
-include "..user_iddb_connect.php";
-
+include "../db_connect.php";
 $find="SELECT COUNT(`id`) FROM `branch_info`";
-$find="SELECT * FROM `branch_info`";
+$row=mysqli_fetch_array(mysqli_query($db,$find));
+$size=$row[0];
+$total_page=ceil($size/9);
+if(isset($_GET["page"]))
+  $page=$_GET["page"];
+else
+  $page=0;
+$offset=$page*9;
+$rec=9;
+$find="SELECT * FROM `branch_info` LIMIT $offset,$rec";
 $rs=mysqli_query($db,$find);
 ?>
 
@@ -49,7 +57,7 @@ border: 1px solid green ;
 </script>
      <!-- navbar-->
      <?php
-     include'..user_idheader.php'
+     include'../header.php'
      ?>
 
 
@@ -141,9 +149,49 @@ echo "</div>";
 </div>
 </div>
 </div>
+<?php
+if($size>9)
+
+{
+
+?>
+<center>
+<div class="page">
+
+<?php
+
+for($i=0;$i<$total_page;$i++)
+{
+
+?>
+<ul class="pagination">
+  
+  <?php 
+  if($page==$i){
+  ?>
+  <li class="active disable"><a href="#"><?php echo ($i+1) ?></a></li>
+  <?php
+  }
+  else
+  {
+  ?>
+  <li><a href="index.php?page=<?php echo $i ?>"><?php echo ($i+1) ?></a></li>
+  <?php
+  }
+  ?>
+</ul>
+<?php
+}
+?>
+
+</div>
+</center>
+
  <?php
-          include '..user_idfooter.php'
+ }
+ include '../footer.php';
           ?>
+
 
     <!-- Javascript files-->
 

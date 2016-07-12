@@ -1,5 +1,5 @@
 <?php
-include "..user_iddb_connect.php";
+include "../db_connect.php";
 $find="SELECT COUNT(`id`) FROM `branch_review`";
 $row=mysqli_fetch_array(mysqli_query($db,$find));
 $size=$row[0];
@@ -68,7 +68,7 @@ box-shadow: 10px 10px 5px #888888;
 </script>
      <!-- navbar-->
      <?php
-     include'..user_idheader.php';
+     include'../header.php';
      ?>
 
 
@@ -234,7 +234,7 @@ for($i=0;$i<$total_page;$i++)
 
  <?php
  }
- include '..user_idfooter.php';
+ include '../footer.php';
           ?>
 
     <!-- Javascript files-->

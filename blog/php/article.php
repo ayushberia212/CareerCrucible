@@ -9,12 +9,8 @@
 	$res = $db->query($query);
 	if($res->num_rows == 1){
 		$row = $res->fetch_array();
-		$string = strip_tags($row["text"]);
-			if (strlen($string) > 500) {
-			$string = substr($string, 0, 500);
-				$string = substr($string, 0, strrpos($string, '.')).'.';
-				$remaining = substr($row["text"], strlen($string), strlen($row["text"]));
-			}
+	$string = stripslashes($row["text"]);
+	$string=str_replace("http://careercrucible.com/%22http://", "http://",$string);
 		
 ?>
 <html>

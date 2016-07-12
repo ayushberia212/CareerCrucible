@@ -1,5 +1,5 @@
 <?php
-include "..user_iddb_connect.php";
+include "../db_connect.php";
 $id=$_GET["id"];
 $find="SELECT * FROM `branch_info` WHERE `id`='$id'";
 $rs=mysqli_query($db,$find) or die("nit");
@@ -43,7 +43,7 @@ $row=mysqli_fetch_assoc($rs);
      <!-- navbar-->
      <?php
 
-include '..user_idheader.php';
+include '../header.php';
 
 ?>
     
@@ -182,14 +182,14 @@ if(isset($row["b_img"])){?>
      </div>
      <div class="col-md-3 noscreen">
         <?php
-          include '..user_idfblike.php'
+          include '../fblike.php'
           ?>
 
           <?php
-          include'..user_idpopulartags.php'
+          include'../populartags.php'
           ?>
           <?php
-          include'..user_idsidenews.php'
+          include'../sidenews.php'
           ?>
      </div>
 </div>
@@ -201,7 +201,7 @@ if(isset($row["b_img"])){?>
 </div>
 <?php
 
-include '..user_idfooter.php';
+include '../footer.php';
 
 ?>
 

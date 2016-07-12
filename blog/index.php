@@ -92,7 +92,7 @@
 						<div class="row ">
 							<div class="col-md-4 mar">
 								<div class="team-member">
-									<div class="image"><a href='php/article.php?id=<?php echo $row["blog_id"]; ?>'><img src='<?php echo $row["image"]; ?>' alt="" class="img-responsive"></a></div>
+									<div class="image"><a href='php/article.php?id=<?php echo $row["blog_id"]; ?>'><img src='../<?php echo $row["image"]; ?>' alt="" class="img-responsive"></a></div>
 									
 								</div>
 							</div>
