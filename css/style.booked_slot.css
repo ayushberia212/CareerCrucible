@@ -1,0 +1,43 @@
+.tile {
+	width: 650px;
+	margin-left: 325px;
+	background: #454545;
+	text-align: center;
+	color: white;
+	padding-top: 50px;
+}
+
+h3 {
+	color: white;
+}
+
+@media(max-width:1280px) {
+	.tile {
+		margin-left: 275px;
+}
+
+@media(max-width:980px) {
+	.tile {
+		margin-left: 135px;
+}
+
+@media(max-width:800px) {
+	.tile {
+		margin-left: 40px;
+}
+
+@media(max-width:768px) {
+	.tile {
+		width: 100%;
+		margin-left: 0px;
+		font-size: 12px;
+	}
+}
+
+@media(max-width:360px) {
+	.tile {
+		width: 100%;
+		margin-left: 0px;
+		font-size: 10px;
+	}
+}
