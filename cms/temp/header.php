@@ -14,12 +14,44 @@
 
     <!-- Custom CSS -->
     <link href="../css/simple-sidebar.css" rel="stylesheet">
-      <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-//<![CDATA[
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  //]]>
+    <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+  <script>
+  tinymce.init({
+    selector: 'textarea',
+  plugins: [
+    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+    'searchreplace wordcount visualblocks visualchars code fullscreen',
+    'insertdatetime media nonbreaking save table contextmenu directionality',
+    'emoticons template paste textcolor colorpicker textpattern imagetools'
+  ],
+    paste_word_valid_elements: "b,strong,i,em,h1,h2",
+    default_link_target: "_blank"
+  });
+  
+  tinymce.init({
+  selector: '#newscontent',
+  plugins:"paste",
+  paste_word_valid_elements: "b,strong,i,em,h1,h2",
+  default_link_target: "_blank"
+  });
+  tinymce.init({
+    selector: '.editor',
+    plugins: [
+    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+    'searchreplace wordcount visualblocks visualchars code fullscreen',
+    'insertdatetime media nonbreaking save table contextmenu directionality',
+    'emoticons template paste textcolor colorpicker textpattern imagetools'
+  ],
+    paste_word_valid_elements: "b,strong,i,em",
+    default_link_target: "_blank"
+  });
+tinymce.init({
+  selector: "#video",  // change this value according to your HTML
+  plugins: "media",
+  menubar: "insert",
+  toolbar: "media"
+});
   </script>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

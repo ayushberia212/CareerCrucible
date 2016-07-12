@@ -1,6 +1,6 @@
-<?php
+	<?php
 session_start();
-require ("..\..\db_connect.php");
+require ("../../db_connect.php");
 if(!isset($_SESSION['username'])){
   echo "<script>window.open('../index.php','_self')</script>";
 }
@@ -8,21 +8,27 @@ if(isset($_POST["sub"]))
 {
 $coverimg=$_FILES["coverimg"]["tmp_name"];
 $iconimg=$_FILES["iconimg"]["tmp_name"];
-$clg_plac=mysqli_real_escape_string($db,addslashes($_POST["clg_plac"]));
+$clg_plac=$_POST["clg_plac"];
 $clg_loc=mysqli_real_escape_string($db,addslashes($_POST["clg_loc"]));
 $clg_name=mysqli_real_escape_string($db,addslashes($_POST["clg_name"]));
 $clg_about=mysqli_real_escape_string($db,addslashes($_POST["clg_about"]));
-$clg_youtube=mysqli_real_escape_string($db,addslashes($_POST["clg_youtube"]));
-$clg_website=mysqli_real_escape_string($db,addslashes($_POST["clg_website"]));
+$clg_youtube=$_POST["clg_youtube"];
+$clg_website=$_POST["clg_website"];
 $clg_addr=mysqli_real_escape_string($db,addslashes($_POST["clg_addr"]));
-$clg_email=mysqli_real_escape_string($db,addslashes($_POST["clg_email"]));
+$clg_email=$_POST["clg_email"];
 $clg_number=mysqli_real_escape_string($db,addslashes($_POST["clg_number"]));
 $clg_area=mysqli_real_escape_string($db,addslashes($_POST["clg_area"]));
 $clg_area_extra=mysqli_real_escape_string($db,addslashes($_POST["clg_area_extra"]));
-$clg_admission=mysqli_real_escape_string($db,addslashes($_POST["clg_admission"]));
+$clg_admission=$_POST["clg_admission"];
 $clg_total_fee=mysqli_real_escape_string($db,addslashes($_POST["clg_total_fee"]));
 $clg_total_hostel=mysqli_real_escape_string($db,addslashes($_POST["clg_total_hostel"]));
-$clg_fee_link=mysqli_real_escape_string($db,addslashes($_POST["clg_total_link"]));
+$clg_fee_link=$_POST["clg_total_link"];
+$arch=$_POST["arch"];
+$mtech=$_POST["mtech"];
+$msc=$_POST["msc"];
+$course=$_POST["course"];
+$past_recruiters=mysqli_real_escape_string($db,addslashes($_POST["past_recr"]));
+$top_recruiters=mysqli_real_escape_string($db,addslashes($_POST["top_recr"]));
 $img1=$_FILES["img1"]["tmp_name"];
 $img2=$_FILES["img2"]["tmp_name"];
 $img3=$_FILES["img3"]["tmp_name"];
@@ -164,7 +170,7 @@ if($img5!=null){
 }
 else
 	$target5=null;
-
+/*
 $in=$_POST["course"];
 $i=0;
 
@@ -209,13 +215,13 @@ foreach($in as $each)
 	$msc.=",".$each;
 	$i++;
 }
-
+*/
 //placement
 $in1=$_POST["placement_branch"];
 $in2=$_POST["placement_max_sal"];
 $in3=$_POST["placement_avg_sal"];
 $i=0;
-for($j=0;$j<sizeof($in);$j++)
+for($j=0;$j<sizeof($in1);$j++)
 {
 	if($i==0)
 	$placement_branch=$in1[$j].",".$in2[$j].",".$in3[$j];
@@ -223,31 +229,20 @@ for($j=0;$j<sizeof($in);$j++)
 	$placement_branch.=";".$in1[$j].",".$in2[$j].",".$in3[$j];
 	$i++;
 }
-$in=$_POST["past_recruties"];
+$in=$_POST["tags"];
 $i=0;
 foreach($in as $each)
 {
 	if($i==0)
-	$past_recruiters=$each;
+	$tags=$each;
 	else
-	$past_recruiters.=",".$each;
+	$tags.=",".$each;
 	$i++;
 }
-$in=$_POST["top_recruties"];
-$i=0;
-foreach($in as $each)
-{
-	if($i==0)
-	$top_recruiters=$each;
-	else
-	$top_recruiters.=",".$each;
-	$i++;
-}
-
 $insert="INSERT INTO college_info 
-( `clg_plac`,`clg_loc`,`clg_name`, `clg_about`,`clg_youtube`, `clg_website`, `clg_addr`, `clg_email`, `clg_number`, `clg_area`, `clg_area_extra`, `clg_admission`, `clg_total_fee`, `clg_total_hostel`, `clg_fee_link`,`clg_img1`, `clg_img2`, `clg_img3`, `clg_img4`, `clg_img5`, `clg_b_tech`, `clg_b_arch`, `clg_m_tech`, `clg_m_sc`, `clg_placement_branch`, `clg_placement_past_r`, `clg_placement_top_r`,clg_cover,clg_icon)
+( `clg_plac`,`clg_loc`,`clg_name`, `clg_about`,`clg_youtube`, `clg_website`, `clg_addr`, `clg_email`, `clg_number`, `clg_area`, `clg_area_extra`, `clg_admission`, `clg_total_fee`, `clg_total_hostel`, `clg_fee_link`,`clg_img1`, `clg_img2`, `clg_img3`, `clg_img4`, `clg_img5`, `clg_b_tech`, `clg_b_arch`, `clg_m_tech`, `clg_m_sc`, `clg_placement_branch`, `clg_placement_past_r`, `clg_placement_top_r`,clg_cover,clg_icon,tags)
  VALUES 
-('$clg_plac','$clg_loc','$clg_name', '$clg_about', '$clg_youtube', '$clg_website', '$clg_addr', '$clg_email', '$clg_number', '$clg_area', '$clg_area_extra', '$clg_admission', '$clg_total_fee', '$clg_total_hostel', '$clg_fee_link','$target1', '$target2', '$target3', '$target4', '$target5', '$course', '$arch', '$mtech', '$msc', '$placement_branch', '$past_recruiters', '$top_recruiters','$covtarget','$icontarget')";
+('$clg_plac','$clg_loc','$clg_name', '$clg_about', '$clg_youtube', '$clg_website', '$clg_addr', '$clg_email', '$clg_number', '$clg_area', '$clg_area_extra', '$clg_admission', '$clg_total_fee', '$clg_total_hostel', '$clg_fee_link','$target1', '$target2', '$target3', '$target4', '$target5', '$course', '$arch', '$mtech', '$msc', '$placement_branch', '$past_recruiters', '$top_recruiters','$covtarget','$icontarget','$tags')";
 echo $insert;
 mysqli_query($db,$insert) or die(mysqli_error($db));
 echo "<script>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "..\..\db_connect.php";
+include "../../db_connect.php";
 if(!isset($_SESSION['username'])){
   echo "<script>window.open('../index.php','_self')</script>";
 }
@@ -10,12 +10,12 @@ $img1=$_FILES["img1"]["tmp_name"];
 $img2=$_FILES["img2"]["tmp_name"];
 $clg=mysqli_real_escape_string($db,addslashes($_POST["clg"]));
 $branch=mysqli_real_escape_string($db,addslashes($_POST["branch"]));
-$intro=mysqli_real_escape_string($db,addslashes($_POST["intro"]));
-$infa_labs=mysqli_real_escape_string($db,addslashes($_POST["infa_labs"]));
-$branch_scope=mysqli_real_escape_string($db,addslashes($_POST["branch_scope"]));
-$branch_faculty=mysqli_real_escape_string($db,addslashes($_POST["branch_faculty"]));
-$col=mysqli_real_escape_string($db,addslashes($_POST["col"]));
-$about=mysqli_real_escape_string($db,addslashes($_POST["about"]));
+$intro=$_POST["intro"];
+$infa_labs=$_POST["infa_labs"];
+$branch_scope=$_POST["branch_scope"];
+$branch_faculty=$_POST["branch_faculty"];
+$col=$_POST["col"];
+$about=$_POST["about"];
 if(!(getimagesize($img1)))
 {
 	echo "<script>
@@ -50,10 +50,19 @@ $row=mysqli_fetch_assoc($re);
 	move_uploaded_file($img2, $target2);
 	$target2="img/".$name;
 }
- 
+$in=$_POST["tags"];
+$i=0;
+foreach($in as $each)
+{
+	if($i==0)
+	$tags=$each;
+	else
+	$tags.=",".$each;
+	$i++;
+}
 $insert="INSERT INTO `branch_review` 
 VALUES
-(NULL,'$target1','$target2','$clg','$branch','$intro','$infa_labs','$branch_scope','$branch_faculty','$col','$about')";
+(NULL,'$target1','$target2','$clg','$branch','$intro','$infa_labs','$branch_scope','$branch_faculty','$col','$about','$tags')";
 echo $insert;
 mysqli_query($db,$insert) or die("Not inserted");
 echo "<script>

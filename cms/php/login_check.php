@@ -1,7 +1,7 @@
 <?php
 //to check login password
 session_start();		
-require ("..\..\db_connect.php");
+require ("../../db_connect.php");
 if(isset($_POST["sub"]))
 {
 	$user=mysqli_real_escape_string($db,$_POST["username"]);

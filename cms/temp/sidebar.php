@@ -27,6 +27,9 @@
 				<li>
                     <a href="insert_branch_info.php">Add Branch Information</a>
                 </li>
+                <li>
+                    <a href="pricing.php">Edit Pricing Info</a>
+                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

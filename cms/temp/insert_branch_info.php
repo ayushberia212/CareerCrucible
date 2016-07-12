@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require ("..\..\db_connect.php");
+require ("../../db_connect.php");
 if(!isset($_SESSION['username'])){
   echo "<script>window.open('../index.php','_self')</script>";
 }
@@ -45,7 +45,7 @@ include'header.php';
             <h4>Branch Name</h4>
             <div class="row">
               <div class="col-sm-12">
-               <input type="text" name="branch" class="form-control" required>
+               <input type="text"  name="branch" class="form-control" required>
                 </div>
          </div>
        </div>
@@ -98,8 +98,16 @@ ndiv.innerHTML="<input type='text' name='best[]' class='form-control' ><br>";
 document.getElementById("add1").appendChild(ndiv);
 
 }
-</script>
-        
+</script> 
+ 
+<script>
+
+function add_fields7(){
+var ndiv=document.createElement('div');
+ndiv.innerHTML="<input type='text' name='tags[]'  class='form-control'>";
+document.getElementById("f7_tags").appendChild(ndiv);
+}
+</script>       
         <div  class="section-gray" style="margin-bottom:30px;">
           
             <h4>TOP Recruiters</h4>
@@ -138,6 +146,15 @@ document.getElementById("add1").appendChild(ndiv);
                 
 				<br><input type="button" name="best[]" onClick="add1()" value="Add More" >
 			<br><br>
+      <div class="popular-post-grids">
+                                 <h4 id="tags">Tags</h4>
+                                           <div id="f7_tags">
+                                              <input type="text"  name="tags[]" required class="form-control">
+                                            </div>
+                                  <br><input type="button" value="Add Another" onClick="add_fields7()" class="form-control">
+                                            
+                                  </div>
+                                  <br>
 		 <center>
 		  <input type="submit" name="sub" value="Submit" >
 		  <input type="reset" value="Reset" >

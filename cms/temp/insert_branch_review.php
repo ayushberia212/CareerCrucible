@@ -1,11 +1,20 @@
 <?php
 session_start();
-require ("..\..\db_connect.php");
+require ("../../db_connect.php");
 if(!isset($_SESSION['username'])){
   echo "<script>window.open('../index.php','_self')</script>";
 } 
 include'header.php';
 ?>
+
+<script>
+
+function add_fields7(){
+var ndiv=document.createElement('div');
+ndiv.innerHTML="<input type='text' name='tags[]'  class='form-control'>";
+document.getElementById("f7_tags").appendChild(ndiv);
+}
+</script>
 <div id="wrapper">
 
         <?php 
@@ -45,7 +54,7 @@ include'header.php';
             <h4>College Name</h4>
             <div class="row">
               <div class="col-sm-12">
-               <input type="text" name="clg" class="form-control" required></textarea>
+               <input type="text"  name="clg" class="form-control" required></textarea>
                 </div>
          </div>
        </div>
@@ -54,7 +63,7 @@ include'header.php';
             <h4>Branch Name</h4>
             <div class="row">
               <div class="col-sm-12">
-               <input type="text" name="branch" class="form-control" required></textarea>
+               <input type="text"  name="branch" class="form-control" required></textarea>
                 </div>
          </div>
        </div>
@@ -127,7 +136,16 @@ include'header.php';
        </div>
 
         <div  class="section-gray" style="margin-bottom:30px;">
-          
+         
+      <div  class="section-gray" style="margin-bottom:30px;">
+                                 <h4 id="tags">Tags</h4>
+                                           <div id="f7_tags">
+                                              <input type="text"  name="tags[]" required class="form-control">
+                                            </div>
+                                  <br><input type="button" value="Add Another" onClick="add_fields7()" class="form-control">
+                                            
+                                  </div>
+                                  <br> 
             
 		 <center>
 		  <input type="submit" name="sub" value="Submit" >

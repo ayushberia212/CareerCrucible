@@ -1,5 +1,5 @@
 <?php
-include "..\..\db_connect.php";
+include "../../db_connect.php";
 if(isset($_POST["sub"]))
 {
 	$name=mysqli_real_escape_string($db,$_POST["name"]);
